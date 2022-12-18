@@ -28,9 +28,18 @@ namespace Plus
             file = ReadText(android_file);
 
             serializer = new Serializer(file);
+            setupUI();
+        }
+        private void setupUI()
+        {
             BindProperty(dropSection, serializer.keys());
 
+            dropSection.AutoCompleteMode = AutoCompleteMode.Suggest;
+            dropSection.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+
         }
+
 
         private void dropSection_SelectedIndexChanged(object sender, EventArgs e)
         {

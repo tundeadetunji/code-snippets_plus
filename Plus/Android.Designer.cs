@@ -47,7 +47,7 @@
             this.dropSection.FormattingEnabled = true;
             this.dropSection.Location = new System.Drawing.Point(12, 13);
             this.dropSection.Name = "dropSection";
-            this.dropSection.Size = new System.Drawing.Size(376, 27);
+            this.dropSection.Size = new System.Drawing.Size(686, 27);
             this.dropSection.TabIndex = 2;
             this.dropSection.SelectedIndexChanged += new System.EventHandler(this.dropSection_SelectedIndexChanged);
             // 
