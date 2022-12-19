@@ -10,6 +10,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Android.cs" />
+    <Compile Remove="Android.Designer.cs" />
+    <Compile Remove="Kubernetes.cs" />
+    <Compile Remove="Kubernetes.Designer.cs" />
+    <Compile Remove="SnippetsPlus.cs" />
+    <Compile Remove="SnippetsPlus.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Android.resx" />
+    <EmbeddedResource Remove="Kubernetes.resx" />
+    <EmbeddedResource Remove="SnippetsPlus.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="search4doc.ico" />
   </ItemGroup>
 

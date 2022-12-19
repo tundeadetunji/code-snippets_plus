@@ -15,32 +15,53 @@ namespace Plus
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            file = ReadText(gcp_file);
-
-            serializer = new Serializer(file);
             setupUI();
         }
 
         private void setupUI()
         {
-            BindProperty(dropSection, serializer.keys());
 
-            dropSection.AutoCompleteMode = AutoCompleteMode.Suggest;
-            dropSection.AutoCompleteSource = AutoCompleteSource.ListItems;
-                
+            dropSnippet.AutoCompleteMode = AutoCompleteMode.Suggest;
+            dropSnippet.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            BindProperty(dropSection, sections);
             
+        }
+
+        private void buttonSection_Click(object sender, EventArgs e)
+        {
+            //moved to dropSection_SelectedIndexChanged
+        }
+
+        private void dropSnippet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dropSnippet.Items.Count < 1) return;
+
+            textSnippet.Text = "";
+            string snippet = "";
+            snippet = serializer.snippet(Content(dropSnippet));
+            if (snippet.Length > 0)
+            {
+                textSnippet.Text = snippet;
+                Clipboard.SetText(snippet);
+            }
         }
 
         private void dropSection_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropSection.Items.Count < 1) return;
+            EnableControls(new object[]{dropSection, dropSnippet, textSnippet}, false);
+
+            dropSnippet.DataSource = null;
+            dropSnippet.Items.Clear();
             textSnippet.Text = "";
-            string snippet = "";
-            snippet = serializer.snippet(Content(dropSection));
-            if (snippet.Length > 0){
-                textSnippet.Text = snippet;
-                Clipboard.SetText(snippet);
-            }
+
+            file = ReadText(files.GetValueOrDefault(Content(dropSection)));
+            serializer = new Serializer(file);
+
+            BindProperty(dropSnippet, serializer.keys());
+
+            EnableControls(new object[] { dropSection, dropSnippet, textSnippet }, true);
+
         }
     }
 }

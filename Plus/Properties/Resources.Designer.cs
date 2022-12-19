@@ -63,6 +63,16 @@ namespace Plus.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Alarm_Tick_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("Alarm-Tick-icon_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap google_icon_48 {
             get {
                 object obj = ResourceManager.GetObject("google-icon_48", resourceCulture);
