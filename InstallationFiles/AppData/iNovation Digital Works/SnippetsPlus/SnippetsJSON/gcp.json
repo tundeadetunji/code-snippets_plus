@@ -8,7 +8,7 @@
     "view project id":"gcloud config get-value project",
     "project details":"gcloud compute project-info describe --project $(gcloud config get-value project)",
     "create environment variable":"export PROJECT_ID=$(variable_to_store)",
-    "create virtual machine":"gEcloud compute instances create gcelab2 --machine-type e2-medium --zone $ZONE",
+    "create virtual machine":"gcloud compute instances create gcelab2 --machine-type e2-medium --zone $ZONE",
     "help":"gcloud -h",
     "list configurations in environment":"gcloud config list",
     "all properties and their settings":"gcloud config list --all",
@@ -27,5 +27,10 @@
     "View the available logs on the system":"gcloud logging logs list",
     "View the logs that relate to compute resources":"gcloud logging logs list --filter=\"compute\"",
     "Read the logs related to the resource of type ":"gcloud logging read \"resource.type=resource_type_eg_gce_instance\" --limit 5",
-    "Read the logs for a specific virtual machine":"gcloud logging read \"resource.type=gce_instance AND labels.instance_name='gcelab2'\" --limit 5"
+    "Read the logs for a specific virtual machine":"gcloud logging read \"resource.type=gce_instance AND labels.instance_name='gcelab2'\" --limit 5",
+    "Set the default compute region":"gcloud config set compute/region us-central1",
+    "Set the default compute zone":"gcloud config set compute/zone us-central1-c",
+    "Create a cluster":"gcloud container clusters create --machine-type=e2-medium --zone=us-central1-c lab-cluster",
+    "Authenticate with the cluster":"gcloud container clusters get-credentials lab-cluster ",
+    "delete cluster":"gcloud container clusters delete lab-cluster"
 }

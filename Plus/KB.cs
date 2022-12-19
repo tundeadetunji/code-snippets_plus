@@ -11,6 +11,7 @@ namespace Plus
 
         public static string gcp_file = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\inovation digital works\snippetsplus\snippetsjson\gcp.json";
         public static string android_file = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\inovation digital works\snippetsplus\snippetsjson\android.json";
+        public static string kubernetes_file = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\inovation digital works\snippetsplus\snippetsjson\kubernetes.json";
 
     }
 }
