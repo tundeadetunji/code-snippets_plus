@@ -1,0 +1,6 @@
+{
+    "View the available logs on the system": "gcloud logging logs list",
+    "View the logs that relate to compute resources": "gcloud logging logs list --filter=\"compute\"",
+    "Read the logs related to the resource of type": "gcloud logging read \"resource.type=resource_type_eg_gce_instance\" --limit 5",
+    "Read the logs for a specific virtual machine": "gcloud logging read \"resource.type=gce_instance AND labels.instance_name='gcelab2'\" --limit 5"
+}

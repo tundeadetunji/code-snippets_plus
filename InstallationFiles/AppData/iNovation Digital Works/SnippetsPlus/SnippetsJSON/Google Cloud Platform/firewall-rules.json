@@ -1,0 +1,9 @@
+{
+    "list the Firewall rules for the project": "gcloud compute firewall-rules list",
+    "list the Firewall rules for the default network": "gcloud compute firewall-rules list --filter=\"network='default'\"",
+    "List the Firewall rules for the default network where the allow rule matches an ICMP rule": "gcloud compute firewall-rules list --filter=\"NETWORK:'default' AND ALLOW:'icmp'\"",
+    "Add a tag to the virtual machine":"gcloud compute instances add-tags gcelab2 --tags http-server,https-server",
+    "Update the firewall rule to allow http": "gcloud compute firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server",
+    "Verify communication is possible for http to the virtual machine": "curl http://$(gcloud compute instances list --filter=name:gcelab2 --format='value(EXTERNAL_IP)')",
+    "Create a firewall rule to allow external traffic to the VM instances":"gcloud compute firewall-rules create www-firewall-network-lb --target-tags network-lb-tag --allow tcp:80"
+}

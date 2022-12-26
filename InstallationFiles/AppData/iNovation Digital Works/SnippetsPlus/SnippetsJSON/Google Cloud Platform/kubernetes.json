@@ -1,0 +1,5 @@
+{
+    "Create a cluster": "gcloud container clusters create --machine-type=e2-medium --zone=us-central1-c lab-cluster",
+    "Authenticate with the cluster": "gcloud container clusters get-credentials lab-cluster ",
+    "delete cluster": "gcloud container clusters delete lab-cluster"
+}

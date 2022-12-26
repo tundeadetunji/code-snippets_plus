@@ -1,0 +1,16 @@
+{
+    "connect to your VM with SSH": "gcloud compute ssh gcelab2 --zone $ZONE",
+    "set region": "gcloud config set compute/region region_name_here",
+    "get region": "gcloud config get-value compute/region",
+    "set zone": "gcloud config set compute/zone zone_name_here",
+    "get zone": "gcloud config set compute/zone",
+    "view project id": "gcloud config get-value project",
+    "project details": "gcloud compute project-info describe --project $(gcloud config get-value project)",
+    "create environment variable": "export KEY=$(variable_to_store)",
+    "help": "gcloud -h",
+    "help verbose": "gcloud config --help",
+    "list configurations in environment": "gcloud config list",
+    "all properties and their settings": "gcloud config list --all",
+    "list components": "gcloud components list",
+    "list compute instance available in the project (shows the IP Address)": "gcloud compute instances list"
+}

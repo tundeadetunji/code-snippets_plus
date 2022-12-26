@@ -1,0 +1,4 @@
+{
+    "list active account name": "gcloud auth list",
+    "list project ID": "gcloud config list project"
+}

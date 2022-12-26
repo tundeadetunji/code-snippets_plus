@@ -1,0 +1,5 @@
+{
+    "Update the OS":"sudo apt-get update",
+    "Install NGINX":" sudo apt-get install -y nginx",
+    "Confirm that NGINX is running":" ps auwx | grep nginx"
+}

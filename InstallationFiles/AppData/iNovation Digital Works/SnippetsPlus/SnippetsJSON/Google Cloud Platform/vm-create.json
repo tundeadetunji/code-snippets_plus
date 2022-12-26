@@ -1,0 +1,7 @@
+{
+    "create virtual machine": "gcloud compute instances create desired_vm_name_here --machine-type e2-medium --zone $ZONE",
+    "create virtual machine verbose":"gcloud compute instances create www2 --zone= --tags=network-lb-tag --machine-type=e2-small --image-family=debian-11 --image-project=debian-cloud --metadata=startup-script='#!/bin/bash apt-get update apt-get install apache2 -y service apache2 restart echo \"<h3>Web Server: www2</h3>\" | tee /var/www/html/index.html'",
+    "list all defaults":"gcloud compute instances create --help",
+    "connect to your VM with SSH": "gcloud compute ssh gcelab2 --zone $ZONE",
+    "Add a tag to the virtual machine":"gcloud compute instances add-tags gcelab2 --tags http-server,https-server"
+}
